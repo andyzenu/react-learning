@@ -71,9 +71,12 @@ function Mycom (props) {
   return (<div>This is my Dom -- {props.age} -- {props.name}</div>)
 }
 
-Mycom.prototypes = {
-  name: PropTypes.number
+Mycom.protoTypes = {
+  name: PropTypes.string,
+  age: PropTypes.number.isRequired
 }
+
+let protoTypee = <Mycom name="wocal" />
 
 let com = <Mycom {...player}/>
 
@@ -84,7 +87,6 @@ Mycom.defaultProps = {
 }
 
 let defaultCom = <Mycom/>
-
 
 let first = (
   <div>
@@ -100,7 +102,9 @@ let first = (
 
     {com}
 
-    {/* {defaultCom} */}
+    {protoTypee}
+
+    {defaultCom}
   </div>
 )
 
