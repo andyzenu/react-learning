@@ -13,7 +13,11 @@
 	<div id="test"></div>
 
 	<script type="text/babel">
-		const dom = <h1>Hello, React</h1>
+		const dom = (
+			<h1>
+				<span>Hello, React</span>
+			</h1>
+		)
 		const container = document.getElementById("test")
 		ReactDOM.render(dom, container)
 	</script>
