@@ -32,8 +32,8 @@
 				</h1>
 				<ul>
 					{
-						listItems.map(item => (
-              <li style={{fontSize: '1.5em', color: 'red'}}>{item}</li>
+						listItems.map((item, index) => (
+              <li key={index} style={{fontSize: '1.5em', color: 'red'}}>{item}</li>
 						))
 					}
 				</ul>

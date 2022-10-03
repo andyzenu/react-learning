@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Class Remind</title>
+</head>
+<body>
+	<script type="text/javascript">
+		class Person {
+			constructor(name, age, gender) {
+				this.name = name
+        this.age = age
+				this.gender = gender
+			}
+			speak () {
+				return `I am ${this.name} and ${this.age} years old`
+			}
+		}
+
+		const p1 = new Person("Andy", 18, "male")
+
+		console.log(p1.speak())
+
+		class Developer extends Person {
+			constructor(name, age, gender, wage, workingHours) {
+				super(name, age, gender)
+				this.wage = wage
+				this.workingHours = workingHours
+			}
+			copyPaste() {
+				return `I am good at copy and paste, and I make $${this.wage} in ${this.workingHours} hours`
+			}
+		}
+
+		const d1 = new Developer("Andy", 18, "male", 100000, 38)
+		console.table(d1)
+		console.log(d1.speak())
+		console.log(d1.copyPaste())
+	</script>
+</body>
+</html>
