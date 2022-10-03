@@ -9,4 +9,5 @@ JSX is JavaScript + XML
 3. use className instead of class attribute `<span className="abc">123</span>`
 4. only one root tag
 5. close all the tags `<input type="text" />`
-6. Uppercase inital characters to use components `<Good>better</Good>`
+6. capitalise tag to use components `<Good>better</Good>`
+7. inline-style needed to be wrapped with double parentheses and attribute in camel style `<strong style={{fontSize: "100px"}}>abc</strong>`
