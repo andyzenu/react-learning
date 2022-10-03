@@ -9,16 +9,24 @@
   <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
   <script src="node_modules/babel-standalone/babel.min.js"></script>
 </head>
+<style>
+	.box {
+		width: 300px;
+    height: 300px;
+		background-color: aqua;
+	}
+</style>
 <body>
 	<div id="test"></div>
 
 	<script type="text/babel">
+		const myId = 'atGuiGu'
+		const myData = 'Hello world!'
 		const dom = (
-			<h1>
-				<span>Hello, React</span>
+			<h1 className="box" id={myId.toLocaleLowerCase()}>
+				<span>{myData}</span>
 			</h1>
 		)
-		console.log(dom)
 		const container = document.getElementById("test")
 		ReactDOM.render(dom, container)
 	</script>

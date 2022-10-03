@@ -1,3 +1,5 @@
 # react-learning
 
-vitural dom is Object
+Virtual dom is Object
+
+JSX is JavaScript + XML
