@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Practice 1</title>
+	<script src="node_modules/react/umd/react.development.js"></script>
+  <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+  <script src="node_modules/babel-standalone/babel.min.js"></script>
+</head>
+<style>
+	.box {
+		width: 600px;
+    height: 400px;
+		background-color: aqua;
+		padding: 15px;
+		box-shadow: 1px 2px 9px #F4AAB9
+	}
+</style>
+<body>
+	<div id="app"></div>
+
+	<script type="text/babel">
+		const myId = 'atGuiGu'
+		const myData = 'Front End JS Framework List'
+		const listItems = ["Angular", "React", "Vue"]
+		const dom = (
+			<div className="box">
+				<h1 id={myId.toLocaleLowerCase()}>
+					<span style={{color: 'white', fontSize: '2em'}}>{myData}</span>
+				</h1>
+				<ul>
+					{
+						listItems.map(item => (
+              <li style={{fontSize: '1.5em', color: 'red'}}>{item}</li>
+						))
+					}
+				</ul>
+			</div>
+		)
+		const container = document.getElementById("app")
+		ReactDOM.render(dom, container)
+	</script>
+</body>
+</html>
