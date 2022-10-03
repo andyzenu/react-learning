@@ -14,6 +14,7 @@
 		width: 300px;
     height: 300px;
 		background-color: aqua;
+		padding: 15px;
 	}
 </style>
 <body>
@@ -23,9 +24,12 @@
 		const myId = 'atGuiGu'
 		const myData = 'Hello world!'
 		const dom = (
-			<h1 className="box" id={myId.toLocaleLowerCase()}>
-				<span style={{color: 'white', fontSize: '2em'}}>{myData}</span>
-			</h1>
+			<div className="box">
+				<h1 id={myId.toLocaleLowerCase()}>
+					<span style={{color: 'white', fontSize: '2em'}}>{myData}</span>
+				</h1>
+				<input type="text" />
+			</div>
 		)
 		const container = document.getElementById("test")
 		ReactDOM.render(dom, container)
