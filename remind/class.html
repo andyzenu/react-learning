@@ -28,6 +28,10 @@
 				super(name, age, gender)
 				this.wage = wage
 				this.workingHours = workingHours
+				this.company = "handful company"
+			}
+			speak () {
+				return `I am rich and I own ${this.company}`
 			}
 			copyPaste() {
 				return `I am good at copy and paste, and I make $${this.wage} in ${this.workingHours} hours`

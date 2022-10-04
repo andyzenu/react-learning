@@ -2,7 +2,7 @@
 
 Virtual dom is Object
 
-JSX is JavaScript + XML
+<h1>JSX is JavaScript + XML</h1>
 
 1. no quotes when define virtual `const myPropTypes = <div>abc</div>`
 2. variable needed to wrap with parentheses `{myPropTypes}`
@@ -11,3 +11,5 @@ JSX is JavaScript + XML
 5. close all the tags `<input type="text" />`
 6. capitalise tag to use components `<Good>better</Good>`
 7. inline-style needed to be wrapped with double parentheses and attribute in camel style `<strong style={{fontSize: "100px"}}>abc</strong>`
+
+<h2>Class Component is not really used anywhere</h2>
