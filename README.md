@@ -13,3 +13,5 @@ Virtual dom is Object
 7. inline-style needed to be wrapped with double parentheses and attribute in camel style `<strong style={{fontSize: "100px"}}>abc</strong>`
 
 <h2>Class Component is not really used anywhere</h2>
+
+<h1>State</h1>
