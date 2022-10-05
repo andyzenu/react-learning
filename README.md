@@ -18,3 +18,4 @@ Virtual dom is Object
 
 1. set up the constructor with super props and initial states
 2. `const {isHot} = this.state` <=> `const isHot = this.state.isHot`
+3. state is not able to be changed directly, which needs a native API to change

@@ -20,7 +20,7 @@
 				}
 			}
 			update = () => {
-				this.setState({ isHot: false })
+				this.setState({ isHot: !this.state.isHot })
 			}
 			render() {
 				const {isHot} = this.state // const isHot = this.state.isHot
