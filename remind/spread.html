@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Spread</title>
+</head>
+<body>
+	<script>
+		let arr1 = [1, 2, 3, 4]
+		let arr2 = [2, 4, 6, 8]
+		console.log(...arr1) //display array
+		let arr3 = [...arr1, ...arr2] //join array
+		console.log(arr3)
+		console.log(...arr3) //display array
+
+		function sum (...numbers) {
+			return numbers.reduce((sum, number) => {
+				return sum + number
+			})
+		}
+
+		console.log(sum(1,2,3,4))
+
+		let person1 = {name: 'John', age: 18}
+		let person2 = {...person1} // clone object
+		person1.name = 'Doe'
+
+		console.log(person1)
+    console.log(person2)
+
+		let person3 = {...person1, age: 178}
+    console.log(person3)
+
+	</script>
+</body>
+</html>
