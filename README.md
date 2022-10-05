@@ -15,3 +15,6 @@ Virtual dom is Object
 <h2>Class Component is not really used anywhere</h2>
 
 <h1>State</h1>
+
+1. set up the constructor with super props and initial states
+2. `const {isHot} = this.state` <=> `const isHot = this.state.isHot`
