@@ -19,3 +19,11 @@ Virtual dom is Object
 1. set up the constructor with super props and initial states
 2. `const {isHot} = this.state` <=> `const isHot = this.state.isHot`
 3. state is not able to be changed directly, which needs a native API to change
+
+<h1>ref</h1>
+
+similar like id
+
+1. string mode is not recommended, bad efficient
+2. ref= c => this.input = c
+3. React.createRef returns a container, and container can be used as a node

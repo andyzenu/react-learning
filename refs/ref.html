@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Refs</title>
+	<script src="../node_modules/react/umd/react.development.js"></script>
+  <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+  <script src="../node_modules/babel-standalone/babel.min.js"></script>
+</head>
+<body>
+	<div id="test"></div>
+	<script type="text/babel">
+		class Demo extends React.Component {
+			render() {
+				return (
+					<div>
+						<input ref="input1" type="text" placeholder="Enter"/>
+						<button onClick={this.update}>Click</button>
+						<br/>
+						<input ref="input2" onBlur={this.show} type="text" placeholder="Blur"/>
+					</div>
+				)
+			}
+			update = () => {
+				const {input1} = this.refs
+				console.log(input1.value)
+			}
+			show = () => {
+				const {input2} = this.refs
+				console.log(input2.value)
+			}
+		}
+		const app = (
+			<div>
+				<Demo />
+			</div>
+		)
+		ReactDOM.render(app, document.getElementById("test"));
+	</script>
+</body>
+</html>
