@@ -32,7 +32,8 @@
 			</div>
 		)
 		const container = document.getElementById("test")
-		ReactDOM.render(dom, container)
+		const root = ReactDOM.createRoot(container)
+		root.render(dom)
 	</script>
 </body>
 </html>
