@@ -27,3 +27,6 @@ similar like id
 1. string mode is not recommended, bad efficient
 2. ref= c => this.input = c
 3. React.createRef returns a container, and container can be used as a node
+
+render() run when initial display and state changes
+componentDidMount() run once when initial display
