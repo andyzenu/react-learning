@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>UnControl</title>
+	<script src="../node_modules/react/umd/react.development.js"></script>
+  <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+  <script src="../node_modules/babel-standalone/babel.min.js"></script>
+</head>
+<body>
+	<div id="test"></div>
+
+	<script type="text/babel">
+		class Login extends React.Component {
+			state = {
+				username: '',
+				password: ''
+			}
+			handleSubmit = (e) => {
+				e.preventDefault()
+				console.log('submit')
+			}
+
+			saveFormData = (dataType) => {
+				return (e) => {
+					this.setState({[dataType]: e.target.value})
+				}
+			}
+
+			buttonClick = () => {
+				console.log('click button')
+			}
+
+			render() {
+				return (
+					<form action="#" onSubmit={this.handleSubmit}>
+						<input onChange={this.saveFormData('username')} type="text" placeholder="enter name" name="username" />
+						<input onChange={this.saveFormData('password')} type="password" placeholder="enter password" name="password" />
+						<button onClick={this.buttonClick}>Click Here</button>
+					</form>
+				)
+			}
+		}
+
+		const container = document.getElementById("test")
+		const root = ReactDOM.createRoot(container)
+		root.render(<Login />)
+	</script>
+</body>
+</html>
