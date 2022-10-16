@@ -16,36 +16,30 @@
 		const container = document.getElementById("test")
 		const root = ReactDOM.createRoot(container)
 
-		class Life extends React.Component {
-			state = {opacity: 1}
-			remove = () => {
-				root.unmount(document.getElementById("test"))
+		class Add extends React.Component {
+			sum = 1
+
+			add = () => {
+				this.sum += 1
 			}
 
 			componentDidMount() {
-				this.timer = setInterval(() => {
-					let {opacity} = this.state
-					opacity -= .1
-					if (opacity <= 0) opacity = 1
-					this.setState({opacity})
-				}, 200)
+
 			}
 
 			componentWillUnmount() {
-				clearInterval(this.timer)
 			}
 
 			render() {
 				return (
 					<div>
-						<h1 style={{opacity: this.state.opacity}}>Hello</h1>
-						<button onClick={this.remove}>Hello S</button>
+						<button onClick={this.add}>Add 1</button>
 					</div>
 				)
 			}
 		}
 
-		root.render(<Life />)
+		root.render(<Add />)
 	</script>
 </body>
 </html>

@@ -30,3 +30,13 @@ similar like id
 
 render() run when initial display and state changes
 componentDidMount() run once when initial display
+
+<h1>Key</h1>
+when data changes, react updates the new date to create a new DOM, and react compares new DOM and old DOM (diff).
+
+If the virtual DOM find the same Key of the new DOM and old DOM
+
+1. virtual DOM is different, and replace the old DOM with the new one.
+2. virtual DOM is same, and then doing nothing.
+
+Use ID as key
