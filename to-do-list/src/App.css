@@ -1,7 +1,11 @@
 .app {
 	position: relative;
-
 }
+
+.app * {
+	box-sizing: border-box;
+}
+
 .wrapper {
 	position: absolute;
 	top: 50%;
