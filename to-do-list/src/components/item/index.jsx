@@ -1,9 +1,10 @@
 import './index.css';
-function Item() {
+function Item(details) {
+	const {finish, name} = details[1]
   return (
 		<ul className='items'>
 			<li className="item">
-				<input type="checkbox" name="hobby"/><span>Item 1</span><button style={{display: 'none'}}>Remove</button>
+				<input type="checkbox" name="hobby" defaultChecked={finish}/> <span> {name}</span><button style={{display: 'none'}}>Remove</button>
 			</li>
 		</ul>
 
