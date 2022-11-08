@@ -1,8 +1,8 @@
 import './index.css'
-const Input = () => {
+const Input = (props) => {
 	const doSomething = (event) => {
 		if (event.key === 'Enter' || event.keyCode === 13) {
-			console.log(event.target.value)
+			props.parentFunction(event.target.value)
 		}
 	}
 

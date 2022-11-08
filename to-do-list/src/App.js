@@ -9,14 +9,19 @@ function App() {
     {id: '2', name: 'sleeping', finish: true},
     {id: '3', name: 'playing', finish: false},
   ]
+
+  const renderInputValue = (value) => {
+    console.log("app1" + value)
+  }
+
   return (
     <div className="App">
       <div className="wrapper">
         <div className="logo">
           <img src={logo} alt="to do list" />
         </div>
-        <Input a={1} />
-        <List toDos={toDos} />
+        <Input parentFunction = {renderInputValue}/>
+        <List toDos = {toDos} />
         <Summary />
       </div>
     </div>
