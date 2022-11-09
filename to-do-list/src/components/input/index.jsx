@@ -2,7 +2,12 @@ import './index.css'
 const Input = (props) => {
 	const doSomething = (event) => {
 		if (event.key === 'Enter' || event.keyCode === 13) {
-			props.parentFunction(event.target.value)
+			const newTodo = {
+				id: Date.now(),
+				name: event.target.value,
+				finish: false
+			}
+			props.parentFunction(newTodo)
 		}
 	}
 

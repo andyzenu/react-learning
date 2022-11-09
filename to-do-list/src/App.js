@@ -1,17 +1,22 @@
+import * as React from "react";
 import logo from './logo.svg';
 import './App.css';
 import Input from './components/input';
 import List from './components/list';
 import Summary from './components/summary';
+
+
 function App() {
-  const toDos = [
-    {id: '1', name: 'eating', finish: true},
-    {id: '2', name: 'sleeping', finish: true},
-    {id: '3', name: 'playing', finish: false},
+  const items = [
+    {id: 1, name: 'eating', finish: true},
+    {id: 2, name: 'sleeping', finish: true},
+    {id: 3, name: 'playing', finish: false},
   ]
 
-  const renderInputValue = (value) => {
-    console.log("app1" + value)
+  const [todos, setTodos] = React.useState(items)
+
+  const renderInputValue = (toDoObj) => {
+    setTodos((todos) => todos.concat([toDoObj]))
   }
 
   return (
@@ -21,7 +26,7 @@ function App() {
           <img src={logo} alt="to do list" />
         </div>
         <Input parentFunction = {renderInputValue}/>
-        <List toDos = {toDos} />
+        <List toDos = {todos} />
         <Summary />
       </div>
     </div>
