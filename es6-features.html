@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+</head>
+<body>
+	<script>
+		// 省略 return 和 {}
+		let a = n => n + n
+		// let a = (n) => {
+		//	return n + n
+		// }
+
+		// 省略 （）当只有一个变量
+		let b = n => {
+			return n + n
+		}
+
+		console.log(a(3))
+		console.log(b(2))
+
+		// 赋值
+
+		function connnet({host, username, password, database}) {
+			console.log(host)
+			console.log(username)
+			console.log(password)
+			console.log(database)
+		}
+
+		connnet({
+			host: 'localhost',
+			username: 'root',
+			password: 'password',
+			database: 'dbname'
+		})
+
+		// rest 参数
+		function test(a, b, ...args) {
+			console.log(args) // 可以使用 filter, some, every, map functions
+		}
+
+		test(1, 2, 'abc', 'bbc', 'ccc')
+
+		const kuz = [123, 223]
+		const ma = [333, 444]
+		const kuzma = [...kuz, ...ma] // the same as kuz.concat(ma)
+
+		console.log(kuzma)
+
+	</script>
+</body>
+</html>
