@@ -7,24 +7,61 @@
 </head>
 <body>
 	<script>
-		function * gen () {
-			console.log('yield 1 start')
-			yield 'abc' // yield 是分隔符
-			console.log('yield 2 start')
-			yield 'bbc'
-			console.log('yield 3 start')
-			yield 'ccc'
+		function * gen (arg) {
+			console.log(arg)
+			let one = yield 'abc' // yield 是分隔符
+			console.log(one)
+			let two = yield 'bbc'
+			console.log(two)
+			let three = yield 'ccc'
+			console.log(three)
+
 		}
 
-		let result = gen()
+		let result = gen('AAA')
 		console.log(result.next())
-		console.log(result.next())
-		console.log(result.next())
-		console.log(result.next())
+		console.log(result.next('BBB'))
+		console.log(result.next('CCC'))
+		console.log(result.next('DDD'))
 
 		for (let item of result) {
 			console.log(item)
 		}
+
+		// instance
+
+		function one() {
+			setTimeout(() => {
+				let data = 'username'
+				iterator.next(data)
+			}, 1000)
+		}
+
+		function two() {
+			setTimeout(() => {
+				let data = 'order'
+				iterator.next(data)
+			}, 1000)
+		}
+
+		function three() {
+			setTimeout(() => {
+				let data = 'goody'
+				iterator.next(data)
+			}, 1000)
+		}
+
+		function * process() {
+			let user = yield one()
+			console.log(user)
+			let order = yield two()
+			console.log(order)
+			let good = yield three()
+			console.log(good)
+		}
+
+		let iterator = process()
+		iterator.next()
 	</script>
 </body>
 </html>
