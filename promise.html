@@ -7,6 +7,71 @@
 </head>
 <body>
 	<script>
+		//const fs = require('file-system')
+
+		const p = new Promise (function (resolve, reject) {
+			setTimeout(function () {
+				let data = 'data from database'
+				let err = 'failed to load data'
+
+				//resolve(data)
+				reject(err)
+			}, 1000)
+		})
+
+		p.then(function (value) {
+			console.log(value)
+		}, function(reason) {
+			console.log(reason)
+		})
+
+		// fs.readFile('./resources/resource1.md', (err, data) => {
+		// 	if (err) throw err
+		// 	console.log(data)
+		// })
+
+		const fileRead = new Promise (function (resolve, reject) {
+			setTimeout(function () {
+				let data = 'data from database'
+				let err = 'failed to load data'
+
+				//resolve(data)
+				//reject(err)
+			}, 1000)
+		})
+
+
+		// https://api.coindesk.com/v1/bpi/currentprice.json
+		// https://dog.ceo/api/breeds/image/random
+
+		const ajaxCall = (api) => {
+			return new Promise (function (resolve, reject) {
+				const xhr = new XMLHttpRequest();
+				xhr.open('GET', api)
+				xhr.send()
+				xhr.onreadystatechange = function () {
+					if (xhr.readyState === 4) {
+						if (xhr.status >= 200 && xhr.status < 300) {
+							resolve(xhr.response)
+						} else {
+							reject(xhr.response)
+						}
+					}
+				}
+			})
+		}
+
+		const coinCurrentPrice = ajaxCall('https://api.coindesk.com/v1/bpi/currentprice.json')
+
+		coinCurrentPrice.then(function (value) {
+			return value
+		}, function (reason) {
+			console.log(reason)
+		}).then(function (value) {
+			ajaxCall('https://dog.ceo/api/breeds/image/random')
+		}, function (reason) {
+			console.log(reason)
+		})
 
 	</script>
 </body>

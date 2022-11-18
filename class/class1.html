@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class</title>
+</head>
+<body>
+	<script>
+		class Phone {
+			constructor(brand, price) {
+				this.brand = brand
+				this.price = price
+			}
+			static onlyClassName = "phone" // class
+			static onlyClassUse () {
+				console.log("read only")
+			}
+
+			call(number) {
+				console.log(number)
+			}
+
+			text(message) {
+				console.log(message)
+			}
+		}
+		let iphone = new Phone("iphone", 3999)
+
+		console.log(iphone)
+		console.log(iphone.brand)
+		iphone.call("call me back")
+
+		//static
+		console.log(Phone.onlyClassName)
+		Phone.onlyClassUse()
+
+		class apple extends Phone {
+			constructor(brand, price, colour, size) {
+				super(brand, price)
+				this.colour = colour
+				this.size = size
+			}
+
+			playGame(gameName) {
+				console.log(`i am playing ${gameName}`)
+			}
+
+			takePhotos() {
+				console.log('kacha')
+			}
+
+			call(number) {
+				console.log(`Video Call ${number}`)
+			}
+		}
+
+		let appleH = new apple('Apple', 3999, 'red', '14.5')
+		appleH.playGame('GOD')
+		appleH.takePhotos()
+		appleH.call('012345')
+		console.log(appleH)
+
+
+	</script>
+</body>
+</html>

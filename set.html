@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Set</title>
+</head>
+<body>
+	<script>
+		let s2 = [1, 2, 3, 4, 5, 4, 3, 2, 1]
+		let s3 = [1, 2, 3, 2, 1, 6, 7]
+
+		// remove duplicates
+		let result = [... new Set(s2)]
+		console.log(result)
+
+		// 交集
+		let result1 = [... new Set(s2)].filter(item => new Set(s3).has(item))
+		console.log(result1)
+		console.log(typeof(result1))
+
+		// 并集
+		let result2 = [... new Set([... s2, ... s3])]
+		console.log(result2)
+
+		// 差集
+		let diff1 = [... new Set(s2)].filter(item => !(new Set(s3).has(item)))
+		console.log(diff1)
+
+		let diff2 = [... new Set(s3)].filter(item => !(new Set(s2).has(item)))
+		console.log(diff2)
+
+	</script>
+</body>
+</html>
