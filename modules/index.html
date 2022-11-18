@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Symbol</title>
+</head>
+<body>
+	<script type="module">
+		import * as script1 from "./script1.js"
+		import * as script3 from "./script3.js"
+		console.log(script1)
+		script1.h2()
+		console.log(script3)
+		script3.default.call()
+
+		import {s1} from "./script2.js"
+		console.log(s1)
+		import {s1 as ss1} from "./script4.js"
+		console.log(ss1)
+
+		import script5 from "./script5.js"
+		console.log(script5)
+		console.log(script5.id)
+	</script>
+</body>
+</html>

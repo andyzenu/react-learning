@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ajax</title>
+</head>
+<body>
+	<script>
+		// https://api.coindesk.com/v1/bpi/currentprice.json
+		// https://dog.ceo/api/breeds/image/random
+
+		const ajaxCall = (api) => {
+			return new Promise (function (resolve, reject) {
+				const xhr = new XMLHttpRequest();
+				xhr.open('GET', api)
+				xhr.send()
+				xhr.onreadystatechange = function () {
+					if (xhr.readyState === 4) {
+						if (xhr.status >= 200 && xhr.status < 300) {
+							resolve(xhr.response)
+						} else {
+							reject(xhr.response)
+						}
+					}
+				}
+			})
+		}
+
+		const coinCurrentPrice = ajaxCall('https://api.coindesk.com/v1/bpi/currentprice.json')
+
+		async function fn () {
+			try {
+				let result = await coinCurrentPrice
+				console.log(result)
+			} catch (e) {
+				console.error(e)
+			}
+		}
+
+		fn()
+
+	</script>
+</body>
+</html>
