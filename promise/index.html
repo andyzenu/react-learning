@@ -6,8 +6,40 @@
   <title>Promise</title>
 </head>
 <body>
-	<script>
+	<button id="button">Try it</button>
+	<div id="number"></div>
 
+	<script>
+		function random(a, b) {
+			return Math.ceil(Math.random() * (b - a + 1)) + a - 1;
+		}
+
+		const btn = document.getElementById('button')
+		const displayNumber = document.getElementById('number')
+
+		btn.addEventListener('click', function (){
+			//console.log('clicked')
+			const p = new Promise ((resolve, reject) => {
+				setTimeout(
+					function () {
+						let number = random(1, 100)
+						if (number < 30 && number > 1) {
+							resolve (`${number} Congratulations`)
+						} else {
+							reject (`${number} Sorry`)
+						}
+					}, 500
+				)
+			})
+
+			p.then(function (value) {
+				console.log(value)
+				displayNumber.innerHTML = value
+			}, function (reason) {
+				console.log(reason)
+				displayNumber.innerHTML = reason
+			})
+		})
 	</script>
 </body>
 </html>

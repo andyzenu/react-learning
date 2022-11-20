@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajax</title>
+</head>
+<body>
+	<style>
+		img {
+			max-width: 200px;
+		}
+	</style>
+	<button id="button" onclick="renderDogPic('https://dog.ceo/api/breeds/image/random')">Get Dog Pic</button>
+	<div id="image"></div>
+	<script>
+		// https://api.coindesk.com/v1/bpi/currentprice.json
+		// https://dog.ceo/api/breeds/image/random
+
+		const button = document.getElementById('button')
+		const imageWrapper = document.getElementById('image')
+		function renderDogPic(url) {
+			const dogPic = new Promise (function (resolve, reject) {
+				const xhr = new XMLHttpRequest()
+				xhr.open('GET', url)
+				xhr.send()
+				xhr.onreadystatechange = function () {
+					if (xhr.readyState === 4) {
+						if (xhr.status >= 200 && xhr.status < 300) {
+							resolve(xhr.response)
+							console.log(xhr.response)
+						} else {
+							reject(xhr.response)
+						}
+					}
+				}
+			})
+			dogPic.then((value) => {
+				const jsonValue = JSON.parse(value)
+				imageWrapper.innerHTML = `<img src="${jsonValue.message}" alt="dog">`
+			}, (reason) => {
+				console.log('what happened?')
+				imageWrapper.innerHTML =	reason
+			})
+		}
+
+	</script>
+</body>
+</html>
