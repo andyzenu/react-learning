@@ -6,6 +6,9 @@
     "./hello.js"
   ],
   "compilerOptions": {
-    "target": "ES6"
+    "target": "ES2015",
+    "module": "ES2015",
+    "lib": ["ES2015","DOM"],
+    "outDir": "./dist"
   }
 }

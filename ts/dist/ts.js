@@ -1,3 +1,5 @@
+import { haohanName } from "./tssub.js";
+console.log(haohanName);
 let c = false;
 c = true;
 function sumTotal(a, b) {

@@ -1,3 +1,6 @@
+import { haohanName } from "./tssub.js"
+console.log(haohanName)
+
 let c: boolean = false
 c = true
 
