@@ -1,0 +1,11 @@
+{
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "./hello.js"
+  ],
+  "compilerOptions": {
+    "target": "ES6"
+  }
+}
