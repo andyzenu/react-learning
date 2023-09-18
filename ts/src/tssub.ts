@@ -1,1 +1,1 @@
-export const haohanName = "Song Jiang";
+export const noOneHaoHan = "Song Jiang"

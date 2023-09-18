@@ -1,5 +1,5 @@
-import { haohanName } from "./tssub.js"
-console.log(haohanName)
+import { noOneHaoHan } from "./tssub.js"
+console.log(noOneHaoHan)
 
 let c: boolean = false
 c = true
