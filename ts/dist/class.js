@@ -20,6 +20,12 @@ class Dog extends Animal {
         super.sayHello();
         console.log(`He is a ${this.gender} dog`);
     }
+    get genderOfDog() {
+        return this.gender;
+    }
+    set genderOfDog(value) {
+        this.gender = value;
+    }
     updateStatus(activity) {
         if (activity === "get shot") {
             this.status = "dead";
@@ -45,3 +51,9 @@ dog1.sayHello();
 dog2.updateStatus("get shot");
 dog2.sayHello();
 cat1.meow();
+dog1.genderOfDog = "father";
+console.log('hi ' + dog1.genderOfDog);
+function fn(a) {
+    return a;
+}
+console.log(fn(19));

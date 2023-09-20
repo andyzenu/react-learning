@@ -2,7 +2,7 @@
 abstract class Animal {
   readonly name: string;
   readonly age: number;
-  status: string;
+  protected status: string;
 
   constructor(name: string, age: number, status: string) {
     this.name = name;
@@ -35,6 +35,14 @@ class Dog extends Animal {
     console.log(`He is a ${this.gender} dog`)
   }
 
+  get genderOfDog() {
+    return this.gender;
+  }
+  
+  set genderOfDog(value: string) {
+    this.gender = value;
+  }
+  
   updateStatus(activity:string) {
     if (activity === "get shot") {
       this.status = "dead"
@@ -64,3 +72,14 @@ dog1.sayHello()
 dog2.updateStatus("get shot")
 dog2.sayHello()
 cat1.meow()
+
+dog1.genderOfDog = "father"
+
+console.log('hi ' + dog1.genderOfDog)
+
+
+function fn<T>(a: T): T {
+  return a
+}
+
+console.log(fn(19))
