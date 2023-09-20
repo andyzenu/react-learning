@@ -1,4 +1,5 @@
-class Animal {
+//abstract only be used for extensions
+abstract class Animal {
   readonly name: string;
   readonly age: number;
 
