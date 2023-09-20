@@ -52,3 +52,16 @@ const newType = {
     age: 9
 };
 console.log(newType.name);
+class MyClass {
+    constructor(name, gender, age) {
+        this.name = name;
+        this.gender = gender;
+        this.age = age;
+    }
+    load() {
+        console.log('reloading');
+    }
+}
+const myClass1 = new MyClass("Lebron", "other", 39);
+console.log(myClass1.age);
+myClass1.load();

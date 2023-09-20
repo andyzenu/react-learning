@@ -19,7 +19,7 @@ abstract class Animal {
 }
 
 class Dog extends Animal {
-  gender: string;
+  private gender: string;
 
   constructor(name: string, age: number, status:string, gender: string) {
     super(name, age, status);
@@ -56,8 +56,8 @@ class Cat extends Animal {
   }
 }
 
-
 const dog1 = new Dog("David", 33, "live", "male")
+console.log(dog1)
 const cat1 = new Cat("Simon", 3, "live")
 const dog2 = new Dog("James", 39, "get shot", "other")
 dog1.sayHello()

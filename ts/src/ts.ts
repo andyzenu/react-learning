@@ -87,7 +87,8 @@ let m: myType
 
 m = 4
 
-//interface
+//interface kind of like abstract class , only define structure, but no value
+//interface standardised the class definition
 interface myNewType {
   name: string,
   gender: string
@@ -102,3 +103,23 @@ const newType:myNewType = {
 }
 
 console.log(newType.name)
+
+class MyClass implements myNewType {
+  name: string;
+  gender: string;
+  age: number;
+  constructor(name, gender, age) {
+    this.name = name;
+    this.gender = gender;
+    this.age = age;
+  }
+
+  load() {
+    console.log('reloading')
+  }
+}
+
+const myClass1 = new MyClass("Lebron", "other", 39)
+console.log(myClass1.age)
+myClass1.load()
+
