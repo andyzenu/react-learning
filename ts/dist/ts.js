@@ -46,3 +46,9 @@ enumType = {
 console.log(enumType.gender);
 let m;
 m = 4;
+const newType = {
+    name: "James",
+    gender: "male",
+    age: 9
+};
+console.log(newType.name);

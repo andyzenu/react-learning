@@ -86,3 +86,19 @@ type myType = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 let m: myType
 
 m = 4
+
+//interface
+interface myNewType {
+  name: string,
+  gender: string
+}
+interface myNewType {
+  age: number
+}
+const newType:myNewType = {
+  name: "James",
+  gender: "male",
+  age: 9
+}
+
+console.log(newType.name)
