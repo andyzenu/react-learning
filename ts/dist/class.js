@@ -57,3 +57,12 @@ function fn(a) {
     return a;
 }
 console.log(fn(19));
+function fn2(a, b) {
+    console.log(b);
+    return a;
+}
+const fn4 = fn2("hello world", 18);
+console.log(fn4);
+function fn3(a) {
+    return a.length;
+}

@@ -83,3 +83,20 @@ function fn<T>(a: T): T {
 }
 
 console.log(fn(19))
+
+
+function fn2<T, K>(a: T, b: K): T {
+  console.log(b)
+  return a
+}
+
+const fn4 = fn2("hello world", 18)
+console.log(fn4)
+
+interface Inter {
+  length: number;
+}
+
+function fn3<T extends Inter>(a: T):number {
+  return a.length
+}
