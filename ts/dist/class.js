@@ -8,8 +8,16 @@ class Animal {
     }
 }
 class Dog extends Animal {
+    constructor(name, age, gender) {
+        super(name, age);
+        this.gender = gender;
+    }
     bark() {
         console.log("wow!");
+    }
+    sayHello() {
+        super.sayHello();
+        console.log(`He is a ${this.gender} dog`);
     }
 }
 class Cat extends Animal {
@@ -17,7 +25,7 @@ class Cat extends Animal {
         console.log("miao!");
     }
 }
-const dog1 = new Dog("David", 33);
+const dog1 = new Dog("David", 33, "male");
 const cat1 = new Cat("Simon", 3);
 dog1.sayHello();
 cat1.meow();
