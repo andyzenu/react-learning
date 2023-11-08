@@ -27,6 +27,7 @@
 						<li>Name: {name}</li>
 						<li>Gender: {gender}</li>
 						<li>Age: {age + 1}</li>
+						<li>Speak:</li>
 					</ul>
 				)
 			}
@@ -34,12 +35,16 @@
 			static propTypes = {
 				name: PropTypes.string.isRequired,
 				gender: PropTypes.string.isRequired,
-				age: PropTypes.number
+				age: PropTypes.number,
+				speak: PropTypes.func
 			}
 
 			static defaultProps = {
 				gender: 'male',
-				age: 23
+				age: 23,
+				speak: function () {
+					return 123
+				}
 			}
 		}
 
